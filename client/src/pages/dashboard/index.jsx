@@ -10,37 +10,50 @@ import AxeIcon from "../../assets/svgs/axe";
 const Dashboard = () => {
   return (
     <MaxContainer>
-      <div className="pt-[48px]">
+      <div className="pt-[48px] max-md:pt-[24px] ">
         <Banner>
           <div className="flex flex-col items-center">
-            <h2 className="text-[24px] font-bold">Want to boost earning?</h2>
-            <div className="w-[150px]">
+            <h2 className="text-[24px] font-bold max-md:text-[20px]">
+              Want to boost earning?
+            </h2>
+            <div className="w-[150px] max-md:w-full max-md:mt-2">
               <Button text="Go to task" full />
             </div>
           </div>
         </Banner>
-        <div className="mt-[48px] mb-[64px] flex justify-between items-center gap-[24px] w-full h-fit relative">
-          <h1 className="text-[20px] font-bold">Edubrakata@gmail.com</h1>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <p className="text-[#999999]">Your available balance</p>
-            <p className="text-[32px] font-semibold text-center">$499.00</p>
+        <div className="mt-[48px] mb-[64px] flex justify-between items-center gap-[24px] w-full h-fit relative max-md:flex-col max-md:mt-[24px] max-md:mb-[32px] max-md:gap-[16px]">
+          <h1 className="text-[20px] font-bold max-md:text-[18px] max-md:text-center">
+            Edubrakata@gmail.com
+          </h1>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-md:static max-md:transform-none">
+            <p className="text-[#999999] max-md:text-center">
+              Your available balance
+            </p>
+            <p className="text-[32px] font-semibold text-center max-md:text-[28px]">
+              $499.00
+            </p>
           </div>
-          <p className="text-[14px] font-medium">Feb 12, 2024 - 12:29 PM</p>
+          <p className="text-[14px] font-medium max-md:text-center">
+            Feb 12, 2024 - 12:29 PM
+          </p>
         </div>
         <div className="flex flex-col items-center mx-auto">
-          {" "}
-          <div className="[&>img]:w-[48px] [&>img]:h-[48px] [&>img]:object-contain flex items-center gap-[16px]">
+          <div className="[&>img]:w-[48px] [&>img]:h-[48px] [&>img]:object-contain flex items-center gap-[16px] max-md:[&>img]:w-[36px] max-md:[&>img]:h-[36px] max-md:gap-[12px]">
             <img src={coin} alt="" />
-            <h2 className="text-[40px] font-bold">4,999,500</h2>
+            <h2 className="text-[40px] font-bold max-md:text-[32px]">
+              4,999,500
+            </h2>
             <img src={coin} alt="" />
           </div>
           <CoinButton />
-          <div className="w-full max-w-[360px]">
+          <div className="w-full max-w-[360px] max-md:max-w-full max-md:mt-4">
             <Range percentage={20} />
           </div>
-          <div className="flex items-center gap-[16px] [&>svg]:w-[24px]">
+          <div className="flex items-center gap-[16px] [&>svg]:w-[24px] max-md:mt-4">
             <AxeIcon />{" "}
-            <p className="font-semibold text-[18px]">99500 / 10000</p>
+            <p className="font-semibold text-[18px] max-md:text-[16px]">
+              99500 / 10000
+            </p>
           </div>
         </div>
       </div>

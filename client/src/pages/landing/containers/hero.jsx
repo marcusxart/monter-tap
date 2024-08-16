@@ -6,8 +6,8 @@ import InputField from "../../../components/inputField";
 const HeroSection = () => {
   return (
     <header className="h-[calc(100dvh-90px)] flex w-full items-center justify-between">
-      <div className="w-[715px] flex-grow-0 flex-shrink-0">
-        <h1 className="text-[60px] font-black leading-[72px] text-[#E4E1F8]">
+      <div className="w-[100%] flex-grow-0 flex-shrink-0">
+        <h1 className="text-[60px] font-black leading-[72px] text-[#E4E1F8] max-md:text-[5rem]">
           The Money-Making Game: Simple Tapping, Real{" "}
           <span className="text-gradient">Rewards.</span>
         </h1>
