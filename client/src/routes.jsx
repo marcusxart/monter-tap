@@ -7,6 +7,7 @@ import SignUp from "./pages/auth/signUp";
 import ForgettenPassword from "./pages/auth/forgettenPassword";
 import Dashboard from "./pages/dashboard";
 import Privacy from "./pages/privacy";
+import Withdraw from "./pages/withdraw/withdraw";
 
 const routes = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const routes = createBrowserRouter([
           { path: "dashboard", element: <Dashboard /> },
           { path: "privacy", element: <Privacy /> },
         ],
+      },
+      {
+        element: <PageWrapper isLoggin Withdraw />,
+        children: [{ path: "withdraw", element: <Withdraw /> }],
       },
     ],
   },
