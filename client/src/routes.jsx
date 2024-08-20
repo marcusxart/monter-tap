@@ -8,6 +8,7 @@ import ForgettenPassword from "./pages/auth/forgettenPassword";
 import Dashboard from "./pages/dashboard";
 import Privacy from "./pages/privacy";
 import Withdraw from "./pages/withdraw/withdraw";
+import Waitlist from "./pages/waitlist/waitlist";
 
 const routes = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const routes = createBrowserRouter([
       {
         element: <PageWrapper isLoggin Withdraw />,
         children: [{ path: "withdraw", element: <Withdraw /> }],
+      },
+      {
+        element: <PageWrapper Withdraw isLoggin />,
+        children: [{ path: "waitlist", element: <Waitlist /> }],
       },
     ],
   },
