@@ -9,6 +9,9 @@ import Dashboard from "./pages/dashboard";
 import Privacy from "./pages/privacy";
 import Withdraw from "./pages/withdraw/withdraw";
 import Waitlist from "./pages/waitlist/waitlist";
+import Bybit from "./pages/exchange/bybit";
+import Verify from "./pages/exchange/verify";
+import Task from "./pages/task/task";
 
 const routes = createBrowserRouter([
   {
@@ -40,12 +43,28 @@ const routes = createBrowserRouter([
         ],
       },
       {
-        element: <PageWrapper isLoggin Withdraw />,
+        element: <PageWrapper isLoggin Withdraw noFooter />,
         children: [{ path: "withdraw", element: <Withdraw /> }],
       },
       {
-        element: <PageWrapper Withdraw isLoggin />,
+        element: <PageWrapper Withdraw isLoggin noFooter />,
         children: [{ path: "waitlist", element: <Waitlist /> }],
+      },
+      {
+        element: <PageWrapper Withdraw isLoggin noFooter />,
+        children: [{ path: "task", element: <Task /> }],
+      },
+      {
+        path: "exchange",
+        element: <PageWrapper isLoggin noFooter />,
+        children: [
+          {
+            index: true,
+            element: <Bybit />,
+          },
+          { path: "bybit", element: <Bybit /> },
+          { path: "verify", element: <Verify /> },
+        ],
       },
     ],
   },

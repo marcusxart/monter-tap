@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./nav";
 import Footer from "./footer";
 
-const PageWrapper = ({ children, isLoggin, Withdraw }) => {
+const PageWrapper = ({ children, isLoggin, Withdraw, noFooter }) => {
   return (
     <>
       <Navbar isLoggin={isLoggin} />
@@ -13,7 +13,7 @@ const PageWrapper = ({ children, isLoggin, Withdraw }) => {
       >
         {children ?? <Outlet />}
 
-        {!Withdraw && <Footer />}
+        {!noFooter && <Footer />}
       </main>
     </>
   );

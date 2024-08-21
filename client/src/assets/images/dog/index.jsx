@@ -9,6 +9,8 @@ import standing from "./standing.png";
 import walking from "./walking.png";
 import wolfBlue from "./wolfBlue.png";
 import wolfWait from "./wolfWait.png";
+import wolfCross from "./wolfCross.png";
+import wolfOne from "./wolfOne.png";
 
 export {
   happy,
@@ -22,4 +24,6 @@ export {
   pointingLeft,
   wolfBlue,
   wolfWait,
+  wolfCross,
+  wolfOne,
 };
