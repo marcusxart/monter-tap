@@ -7,15 +7,15 @@ const OfferSection = () => {
   return (
     <section>
       <MaxContainer>
-        <h2 className="text-center text-[#E4E1F8] text-[48px] font-black">
+        <h2 className="text-center text-[#E4E1F8] text-[48px] font-black max-md:text-[25px] max-md:text-center">
           What we have to offer
         </h2>
       </MaxContainer>
 
-      <div className="w-full flex gap-[48px] flex-col mt-[56px]">
-        <div className="relative overflow-hidden h-fit">
+      <div className="w-full flex gap-[48px] flex-col mt-[56px] ">
+        <div className="relative overflow-hidden h-fit ">
           <MaxContainer>
-            <div className=" relative flex items-center justify-between w-full gap-[48px]">
+            <div className=" relative flex items-center justify-between w-full gap-[48px] ">
               <div className="w-[48%] h-[500px] bg-[#63BBC282] rounded-[44px] bg-purple-400 max-md:hidden">
                 <img
                   src={walking}
@@ -23,7 +23,7 @@ const OfferSection = () => {
                   className="w-full  h-full object-contain"
                 />
               </div>
-              <div className="w-full flex-shrink-0 text-right pl-[32px] relative z-[2] max-md:text-center max-w-[500px]">
+              <div className="w-full flex-shrink-0 text-right pl-[32px] relative z-[2] max-md:text-center max-w-[500px] max-md:text-center max-md:pl-[0px]">
                 <h3 className="text-[34px] font-bold text-[#E4E1F8] text-center">
                   Easy and fast payout
                 </h3>
@@ -50,7 +50,7 @@ const OfferSection = () => {
                   className="w-full  absolute left-[calc(50%-50px)] -translate-x-1/2 top-[-100px] h-[500px] object-contain"
                 />
               </div>
-              <div className="w-full flex-shrink-0 text-left pl-[32px] relative z-[2]  max-w-[500px] max-md:text-center">
+              <div className="w-full flex-shrink-0 text-left pl-[32px] relative z-[2]  max-w-[500px] max-md:text-center max-md:pl-[0px]">
                 <h3 className="text-[34px] font-bold text-[#E4E1F8] text-center">
                   Mobile friendly
                 </h3>
@@ -77,7 +77,7 @@ const OfferSection = () => {
                   className="w-full absolute top-[35px] h-[500px] object-contain"
                 />
               </div>
-              <div className="w-full flex-shrink-0 text-right pl-[32px] relative z-[2] max-w-[500px] max-md:text-center">
+              <div className="w-full flex-shrink-0 text-right pl-[32px] relative z-[2] max-w-[500px] max-md:text-center max-md:pl-[0px]">
                 <h3 className="text-[34px] font-bold text-[#E4E1F8]">
                   Effortless earning
                 </h3>
