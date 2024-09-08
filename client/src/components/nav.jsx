@@ -69,8 +69,9 @@ const Navbar = ({ isLoggin }) => {
                   element: <LKeyIcon />,
                   position: "right",
                 }}
+                link="/auth/sign-in" // Adding link prop for navigation
               />
-              <Button text="Sign up" sm type="secondary" />
+              <Button text="Sign up" sm type="secondary" link="/auth/sign-up" />
             </div>
           )}
         </div>
