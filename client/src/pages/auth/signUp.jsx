@@ -32,23 +32,22 @@ const SignUp = () => {
     // Validation checks
     if (!email || !password || !confirmPassword) {
       toast.error("All fields are required");
-      toast.dismiss(toastLoadingId); // Dismiss the loading toast
+      toast.dismiss(toastLoadingId);
       return;
     }
 
     if (password !== confirmPassword) {
       toast.error("Passwords do not match");
-      toast.dismiss(toastLoadingId); // Dismiss the loading toast
+      toast.dismiss(toastLoadingId);
       return;
     }
 
     if (!isValidPassword) {
       toast.error("Password must contain at least one special character");
-      toast.dismiss(toastLoadingId); // Dismiss the loading toast
+      toast.dismiss(toastLoadingId);
       return;
     }
 
-    // If validation passes, start API call
     try {
       setloading(true); // Set loading state before the API call
 
