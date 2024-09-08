@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
 import axios from "axios";
-import { setUser } from "../../Global/Slice";
+import { setToken, setUser } from "../../Global/Slice";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -37,6 +37,7 @@ const SignIn = () => {
       setEmail("");
       setPassword("");
       dispatch(setUser(response.data));
+      dispatch(setToken(response.data.acesss));
       navigate("/dashboard");
     } catch (error) {
       if (axios.isAxiosError(error)) {
