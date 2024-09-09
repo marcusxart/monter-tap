@@ -21,18 +21,20 @@ const Navbar = ({ isLoggin }) => {
             <LogoAndText />
           </Link>
 
-          {isLoggin && (
+          {isLoggin ? (
             <>
+              {/* Mobile menu button */}
               <div className="md:hidden flex items-center">
                 <button onClick={toggleMenu} className="text-white text-2xl">
                   {menuOpen ? <FaTimes /> : <FaBars />}
                 </button>
               </div>
 
+              {/* Mobile dropdown menu */}
               <div
                 className={`${
-                  menuOpen ? "max-h-[300px]" : "max-h-0"
-                } transition-max-height duration-300 overflow-hidden md:hidden w-full bg-[#0A0A0AB5] absolute top-full left-0 right-0 z-20`}
+                  menuOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
+                } transition-[max-height,opacity] duration-500 ease-in-out overflow-hidden md:hidden w-full bg-[#0A0A0AB5] absolute top-full left-0 right-0 z-20`}
               >
                 <ul className="flex flex-col items-center text-[14px] gap-[20px] font-semibold py-4">
                   <li>Mine</li>
@@ -52,6 +54,7 @@ const Navbar = ({ isLoggin }) => {
                 <li>Listing</li>
               </ul>
 
+              {/* User info */}
               <div className="hidden md:flex items-center gap-[20px]">
                 <p className="text-[18px] font-semibold">samantha@gmail.com</p>
                 <span className="grid place-items-center bg-[#E8C726] w-[52px] h-[52px] rounded-full text-[32px] font-bold text-black">
@@ -59,19 +62,34 @@ const Navbar = ({ isLoggin }) => {
                 </span>
               </div>
             </>
-          )}
-          {!isLoggin && (
-            <div className="hidden items-center gap-[8px] md:flex">
-              <Button
-                text="Log in"
-                sm
-                icon={{
-                  element: <LKeyIcon />,
-                  position: "right",
-                }}
-                link="/auth/sign-in" // Adding link prop for navigation
-              />
-              <Button text="Sign up" sm type="secondary" link="/auth/sign-up" />
+          ) : (
+            <div className="flex items-center gap-[8px] md:flex relative">
+              <FaBars className="text-2xl text-white" onClick={toggleMenu} />
+
+              {/* Animated dropdown for login/signup */}
+              <div
+                className={`w-[10rem] h-[9rem] bg-[#0A0A0AB5] flex justify-center gap-4 flex-col items-center absolute top-full right-0 transition-transform duration-500 ease-in-out transform ${
+                  menuOpen
+                    ? "translate-y-0 opacity-100"
+                    : "-translate-y-10 opacity-0 pointer-events-none"
+                }`}
+              >
+                <Button
+                  text="Log in"
+                  sm
+                  icon={{
+                    element: <LKeyIcon />,
+                    position: "right",
+                  }}
+                  link="/auth/sign-in"
+                />
+                <Button
+                  text="Sign up"
+                  sm
+                  type="secondary"
+                  link="/auth/sign-up"
+                />
+              </div>
             </div>
           )}
         </div>

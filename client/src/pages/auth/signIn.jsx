@@ -33,11 +33,14 @@ const SignIn = () => {
     try {
       setLoading(true);
       const response = await axios.post(url, data);
+      const accessToken = response?.data?.access;
+      // console.log(accessToken);
+
       toast.success("Login successful!", { duration: 3000 });
       setEmail("");
       setPassword("");
-      dispatch(setUser(response.data));
-      dispatch(setToken(response.data.acesss));
+      dispatch(setUser(response.data.user));
+      dispatch(setToken(accessToken));
       navigate("/dashboard");
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -85,7 +88,7 @@ const SignIn = () => {
         <p className="mt-[40px] mb-[32px]">
           Don’t have an account? <Link to="/auth/sign-up"> Sign up -{">"}</Link>
         </p>
-        <Link to="/auth/forgotten-password">Forgot password?</Link>
+        <Link to="/auth/forgetten-password">Forgot password?</Link>
       </div>
     </form>
   );
