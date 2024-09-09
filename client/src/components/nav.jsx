@@ -63,17 +63,9 @@ const Navbar = ({ isLoggin }) => {
               </div>
             </>
           ) : (
-            <div className="flex items-center gap-[8px] md:flex relative">
-              <FaBars className="text-2xl text-white" onClick={toggleMenu} />
-
-              {/* Animated dropdown for login/signup */}
-              <div
-                className={`w-[10rem] h-[9rem] bg-[#0A0A0AB5] flex justify-center gap-4 flex-col items-center absolute top-full right-0 transition-transform duration-500 ease-in-out transform ${
-                  menuOpen
-                    ? "translate-y-0 opacity-100"
-                    : "-translate-y-10 opacity-0 pointer-events-none"
-                }`}
-              >
+            <>
+              {/* Desktop login/signup buttons */}
+              <div className="hidden md:flex items-center gap-[16px]">
                 <Button
                   text="Log in"
                   sm
@@ -90,7 +82,37 @@ const Navbar = ({ isLoggin }) => {
                   link="/auth/sign-up"
                 />
               </div>
-            </div>
+
+              {/* Mobile menu button */}
+              <div className="flex items-center gap-[8px] md:hidden relative">
+                <FaBars className="text-2xl text-white" onClick={toggleMenu} />
+
+                {/* Animated dropdown for login/signup (Mobile) */}
+                <div
+                  className={`w-[10rem] h-[9rem] bg-[#0A0A0AB5] flex justify-center gap-4 flex-col items-center absolute top-full right-0 transition-transform duration-500 ease-in-out transform ${
+                    menuOpen
+                      ? "translate-y-0 opacity-100"
+                      : "-translate-y-10 opacity-0 pointer-events-none"
+                  }`}
+                >
+                  <Button
+                    text="Log in"
+                    sm
+                    icon={{
+                      element: <LKeyIcon />,
+                      position: "right",
+                    }}
+                    link="/auth/sign-in"
+                  />
+                  <Button
+                    text="Sign up"
+                    sm
+                    type="secondary"
+                    link="/auth/sign-up"
+                  />
+                </div>
+              </div>
+            </>
           )}
         </div>
       </MaxContainer>
