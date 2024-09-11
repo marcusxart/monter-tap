@@ -3,6 +3,7 @@ import InputField from "../../components/inputField";
 import Button from "../../components/button";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const ForgettenPassword = () => {
   const [isSend, setIsSend] = useState(false);
@@ -10,6 +11,8 @@ const ForgettenPassword = () => {
 
   // API URL for the forgotten password
   const url = `${import.meta.env.VITE_DEVE_URL}/auth/forget-password`;
+
+  const navigate = useNavigate();
 
   // Handle form submission
   const handleSubmit = async (e) => {
@@ -28,6 +31,7 @@ const ForgettenPassword = () => {
       setIsSend(true);
       setEmail("");
       toast.success("Password reset link sent!", { duration: 3000 });
+      navigate("/auth/verify-otp");
     } catch (error) {
       const errorMsg = axios.isAxiosError(error)
         ? error.response?.data?.message || "An error occurred"
@@ -49,7 +53,7 @@ const ForgettenPassword = () => {
             onChange={setEmail}
             required
           />
-          <Button type="submit" text="Reset password" full border />
+          <Button type="submit" text="Send Mail" full border />
         </form>
       ) : (
         <p className="text-center text-[14px] leading-[24px] text-[#969799]">

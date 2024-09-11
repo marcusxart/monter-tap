@@ -10,8 +10,11 @@ import Privacy from "./pages/privacy";
 import Withdraw from "./pages/withdraw/withdraw";
 import Waitlist from "./pages/waitlist/waitlist";
 import Bybit from "./pages/exchange/bybit";
-import Verify from "./pages/exchange/verify";
 import Task from "./pages/task/task";
+import Verify from "./pages/exchange/verify";
+import VerifyOtp from "./pages/auth/verifyOtp";
+import ResetPassword from "./pages/auth/ResetPassord";
+import ResendOtp from "./pages/auth/ResendOtp";
 
 const routes = createBrowserRouter([
   {
@@ -33,6 +36,9 @@ const routes = createBrowserRouter([
           { path: "sign-in", element: <SignIn /> },
           { path: "sign-up", element: <SignUp /> },
           { path: "forgetten-password", element: <ForgettenPassword /> },
+          { path: "verify-otp", element: <VerifyOtp /> },
+          { path: "reset-password", element: <ResetPassword /> },
+          { path: "resend-otp", element: <ResendOtp /> },
         ],
       },
       {
