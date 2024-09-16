@@ -5,9 +5,12 @@ import MaxContainer from "./maxContainer";
 import Button from "./button";
 import LKeyIcon from "../assets/svgs/lKey";
 import LogoAndText from "../assets/svgs/logoAndText";
+import { useSelector } from "react-redux";
 
 const Navbar = ({ isLoggin }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const user = useSelector((state) => state.user);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -56,7 +59,7 @@ const Navbar = ({ isLoggin }) => {
 
               {/* User info */}
               <div className="hidden md:flex items-center gap-[20px]">
-                <p className="text-[18px] font-semibold">samantha@gmail.com</p>
+                <p className="text-[18px] font-semibold">{user.email}</p>
                 <span className="grid place-items-center bg-[#E8C726] w-[52px] h-[52px] rounded-full text-[32px] font-bold text-black">
                   S
                 </span>
