@@ -6,27 +6,17 @@ import { useNavigate } from "react-router-dom";
 import InputField from "../../components/inputField";
 
 const ResetPassword = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const [email, setemail] = useState("");
+  const [password, setpassword] = useState("");
+  const [confirmPassword, setconfirmPassword] = useState("");
 
   const navigate = useNavigate();
   const url = `${import.meta.env.VITE_DEVE_URL}/auth/reset-password`;
 
-  // Handle input change
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { email, password, confirmPassword } = formData;
+    const data = { email, password, confirmPassword };
 
     if (password !== confirmPassword) {
       toast.error("Passwords do not match");
@@ -36,7 +26,7 @@ const ResetPassword = () => {
     const toastLoadingId = toast.loading("Resetting password...");
 
     try {
-      await axios.post(url, { email, password });
+      await axios.post(url, data);
       toast.success("Password reset successfully!", { duration: 3000 });
       navigate("/auth/sign-in");
     } catch (error) {
@@ -56,24 +46,24 @@ const ResetPassword = () => {
           type="email"
           name="email"
           placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
+          value={email}
+          onChange={setemail}
           required
         />
         <InputField
           type="password"
           name="password"
           placeholder="New Password"
-          value={formData.password}
-          onChange={handleChange}
+          value={password}
+          onChange={setpassword}
           required
         />
         <InputField
           type="password"
           name="confirmPassword"
           placeholder="Confirm Password"
-          value={formData.confirmPassword}
-          onChange={handleChange}
+          value={confirmPassword}
+          onChange={setconfirmPassword}
           required
         />
         <Button text="Reset Password" type="submit" full border />

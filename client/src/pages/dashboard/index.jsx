@@ -6,8 +6,12 @@ import { coin } from "../../assets/images";
 import CoinButton from "../../components/coinButton";
 import Range from "./components/range";
 import AxeIcon from "../../assets/svgs/axe";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
+  const userInfo = useSelector((state) => state.user);
+  console.log(userInfo);
+
   return (
     <MaxContainer>
       <div className="pt-[48px] max-md:pt-[24px] ">
@@ -23,7 +27,7 @@ const Dashboard = () => {
         </Banner>
         <div className="mt-[48px] mb-[64px] flex justify-between items-center gap-[24px] w-full h-fit relative max-md:flex-col max-md:mt-[24px] max-md:mb-[32px] max-md:gap-[16px]">
           <h1 className="text-[20px] font-bold max-md:text-[18px] max-md:text-center">
-            Edubrakata@gmail.com
+            {userInfo.email}
           </h1>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-md:static max-md:transform-none">
             <p className="text-[#999999] max-md:text-center">
@@ -34,7 +38,13 @@ const Dashboard = () => {
             </p>
           </div>
           <p className="text-[14px] font-medium max-md:text-center">
-            Feb 12, 2024 - 12:29 PM
+            {new Date(userInfo.createdAt).toLocaleDateString()}{" "}
+            {new Date(userInfo.createdAt).toLocaleTimeString([], {
+              hour: "2-digit",
+              minute: "2-digit",
+              second: "2-digit",
+              hour12: false,
+            })}
           </p>
         </div>
         <div className="flex flex-col items-center mx-auto">
