@@ -61,7 +61,7 @@ const Navbar = ({ isLoggin }) => {
               <div className="hidden md:flex items-center gap-[20px]">
                 <p className="text-[18px] font-semibold">{user.email}</p>
                 <span className="grid place-items-center bg-[#E8C726] w-[52px] h-[52px] rounded-full text-[32px] font-bold text-black">
-                  S
+                  {user.email.slice(0, 1).toUpperCase()}
                 </span>
               </div>
             </>

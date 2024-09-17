@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 
 const Dashboard = () => {
   const userInfo = useSelector((state) => state.user);
-  console.log(userInfo);
+  // console.log(userInfo.account);
 
   return (
     <MaxContainer>
@@ -31,10 +31,10 @@ const Dashboard = () => {
           </h1>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-md:static max-md:transform-none">
             <p className="text-[#999999] max-md:text-center">
-              Your available balance
+              Your Total diamond
             </p>
             <p className="text-[32px] font-semibold text-center max-md:text-[28px]">
-              $499.00
+              {/* <img src={} alt="" /> 0 */}
             </p>
           </div>
           <p className="text-[14px] font-medium max-md:text-center">
@@ -51,7 +51,7 @@ const Dashboard = () => {
           <div className="[&>img]:w-[48px] [&>img]:h-[48px] [&>img]:object-contain flex items-center gap-[16px] max-md:[&>img]:w-[36px] max-md:[&>img]:h-[36px] max-md:gap-[12px]">
             <img src={coin} alt="" />
             <h2 className="text-[40px] font-bold max-md:text-[32px]">
-              4,999,500
+              {userInfo.account.coinCount}
             </h2>
             <img src={coin} alt="" />
           </div>
