@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MaxContainer from "../../components/maxContainer";
 import Banner from "../../components/banner";
 import Button from "../../components/button";
-import { coin } from "../../assets/images";
+import { coin, diamond } from "../../assets/images";
 import CoinButton from "../../components/coinButton";
 import Range from "./components/range";
 import AxeIcon from "../../assets/svgs/axe";
@@ -11,6 +11,16 @@ import { useSelector } from "react-redux";
 const Dashboard = () => {
   const userInfo = useSelector((state) => state.user);
   // console.log(userInfo.account);
+
+  const [currentDateTime, setCurrentDateTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentDateTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <MaxContainer>
@@ -34,17 +44,14 @@ const Dashboard = () => {
               Your Total diamond
             </p>
             <p className="text-[32px] font-semibold text-center max-md:text-[28px]">
-              {/* <img src={} alt="" /> 0 */}
+              <div className="w-[100%] h-[20%] flex justify-center gap-2 items-center">
+                <img src={diamond} alt="" />
+                <p>{userInfo.account.bonus}</p>
+              </div>
             </p>
           </div>
           <p className="text-[14px] font-medium max-md:text-center">
-            {new Date(userInfo.createdAt).toLocaleDateString()}{" "}
-            {new Date(userInfo.createdAt).toLocaleTimeString([], {
-              hour: "2-digit",
-              minute: "2-digit",
-              second: "2-digit",
-              hour12: false,
-            })}
+            {currentDateTime.toLocaleString()}
           </p>
         </div>
         <div className="flex flex-col items-center mx-auto">
@@ -56,15 +63,6 @@ const Dashboard = () => {
             <img src={coin} alt="" />
           </div>
           <CoinButton />
-          <div className="w-full max-w-[360px] max-md:max-w-full max-md:mt-4">
-            <Range percentage={20} />
-          </div>
-          <div className="flex items-center gap-[16px] [&>svg]:w-[24px] max-md:mt-4">
-            <AxeIcon />{" "}
-            <p className="font-semibold text-[18px] max-md:text-[16px]">
-              99500 / 10000
-            </p>
-          </div>
         </div>
       </div>
     </MaxContainer>
