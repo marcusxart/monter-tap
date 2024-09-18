@@ -6,7 +6,8 @@ const MySlice = createSlice({
     user: {
       id: null, // Add user id
       account: {
-        coinCount: 0, // Add initial coin count inside account object
+        coinCount: 0,
+        bonus: 0,
       },
     },
     Token: "",
@@ -27,8 +28,12 @@ const MySlice = createSlice({
         state.user.account.coinCount += 1;
       }
     },
+    addedBonus: (state, action) => {
+      state.user.account.bonus = action.payload;
+    },
   },
 });
 
-export const { setUser, removeUser, setToken, incrementCoin } = MySlice.actions;
+export const { setUser, removeUser, setToken, incrementCoin, addedBonus } =
+  MySlice.actions;
 export default MySlice.reducer;
