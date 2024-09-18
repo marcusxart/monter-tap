@@ -7,10 +7,13 @@ import CoinButton from "../../components/coinButton";
 import Range from "./components/range";
 import AxeIcon from "../../assets/svgs/axe";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const userInfo = useSelector((state) => state.user);
   // console.log(userInfo.account);
+
+  const navigate = useNavigate();
 
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
@@ -31,7 +34,7 @@ const Dashboard = () => {
               Want to boost earning?
             </h2>
             <div className="w-[150px] max-md:w-full max-md:mt-2">
-              <Button text="Go to task" full />
+              <Button text="Go to task" full link="/task" />
             </div>
           </div>
         </Banner>
