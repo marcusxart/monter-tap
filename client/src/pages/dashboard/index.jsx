@@ -6,18 +6,39 @@ import { coin, diamond } from "../../assets/images";
 import CoinButton from "../../components/coinButton";
 import Range from "./components/range";
 import AxeIcon from "../../assets/svgs/axe";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { addedBonus } from "../../Global/Slice";
 
 const Dashboard = () => {
   const userInfo = useSelector((state) => state.user);
   // console.log(userInfo.account);
 
+  const bonus = useSelector((state) => state.user.account.bonus);
+  // console.log(bonus);
+
   const navigate = useNavigate();
 
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
+  const dispatch = useDispatch();
+
+  const url = `${import.meta.env.VITE_DEVE_URL}/account/getUserBonus/${
+    userInfo.id
+  }`;
+
+  const getBonus = async () => {
+    try {
+      const response = await axios.get(url);
+      dispatch(addedBonus(response.data.bonus));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
+    getBonus();
     const timer = setInterval(() => {
       setCurrentDateTime(new Date());
     }, 1000);
@@ -49,7 +70,8 @@ const Dashboard = () => {
             <p className="text-[32px] font-semibold text-center max-md:text-[28px]">
               <div className="w-[100%] h-[20%] flex justify-center gap-2 items-center">
                 <img src={diamond} alt="" />
-                <p>{userInfo.account.bonus}</p>
+                {/* <p>{userInfo.account.bonus}</p> */}
+                {bonus}
               </div>
             </p>
           </div>
