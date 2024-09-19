@@ -3,19 +3,23 @@ import InputField from "../../components/inputField";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/button";
 import axios from "axios";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
+  const [referral_code, setreferral_code] = useState(""); // Handle referral code input
   const [loading, setloading] = useState(false);
 
   const url = `${import.meta.env.VITE_DEVE_URL}/auth/sign-up`;
+
+  // Create the request payload based on whether referral_code is provided
   const data = {
     email,
     password,
     confirmPassword,
+    ...(referral_code && { referral_code }), // Conditionally add referral_code if it's present
   };
 
   const passwordRegex =
@@ -60,6 +64,7 @@ const SignUp = () => {
       setemail("");
       setpassword("");
       setconfirmPassword("");
+      setreferral_code("");
 
       // Navigate to sign-in page
       navigate("/auth/sign-in");
@@ -100,8 +105,8 @@ const SignUp = () => {
         <InputField
           placeholder="Referral Code (Optional)"
           type="text"
-          value={confirmPassword}
-          onChange={setconfirmPassword}
+          value={referral_code} // Update the referral code input field
+          onChange={setreferral_code}
         />
         <Button
           text="Create your account"
