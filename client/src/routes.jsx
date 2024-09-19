@@ -15,6 +15,7 @@ import Verify from "./pages/exchange/verify";
 import VerifyOtp from "./pages/auth/verifyOtp";
 import ResetPassword from "./pages/auth/ResetPassord";
 import ResendOtp from "./pages/auth/ResendOtp";
+import Referals from "./pages/referals/referals";
 
 const routes = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const routes = createBrowserRouter([
       {
         element: <PageWrapper Withdraw isLoggin noFooter />,
         children: [{ path: "task", element: <Task /> }],
+      },
+      {
+        element: <PageWrapper Withdraw isLoggin noFooter />,
+        children: [{ path: "referals", element: <Referals /> }],
       },
       {
         path: "exchange",

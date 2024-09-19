@@ -97,6 +97,12 @@ const SignUp = () => {
           value={confirmPassword}
           onChange={setconfirmPassword}
         />
+        <InputField
+          placeholder="Referral Code (Optional)"
+          type="text"
+          value={confirmPassword}
+          onChange={setconfirmPassword}
+        />
         <Button
           text="Create your account"
           full
