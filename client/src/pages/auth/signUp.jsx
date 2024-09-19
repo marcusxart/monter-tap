@@ -70,7 +70,7 @@ const SignUp = () => {
       navigate("/auth/sign-in");
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        const errorMsg = error.response?.data?.error || "An error occurred";
+        const errorMsg = error.response?.data?.message || "An error occurred";
         toast.error(errorMsg);
       } else {
         toast.error("An unknown error occurred");

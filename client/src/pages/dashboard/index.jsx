@@ -9,7 +9,7 @@ import AxeIcon from "../../assets/svgs/axe";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { addedBonus } from "../../Global/Slice";
+import { addedBonus, setCoinCount } from "../../Global/Slice";
 
 const Dashboard = () => {
   const userInfo = useSelector((state) => state.user);
@@ -18,6 +18,7 @@ const Dashboard = () => {
   const bonus = useSelector((state) => state.user.account.bonus);
   // console.log(bonus);
 
+  const coincount = useSelector((state) => state.user.account.coinCount);
   const navigate = useNavigate();
 
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
@@ -37,8 +38,23 @@ const Dashboard = () => {
     }
   };
 
+  const getCoinCount = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_DEVE_URL}/account/getUserCoinCount/${
+          userInfo.id
+        }`
+      );
+      dispatch(setCoinCount(response.data.coinCount));
+      console.log(response.data.coinCount);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getBonus();
+    getCoinCount();
     const timer = setInterval(() => {
       setCurrentDateTime(new Date());
     }, 1000);
