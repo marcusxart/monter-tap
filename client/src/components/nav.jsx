@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa"; // Importing icons
 import MaxContainer from "./maxContainer";
 import Button from "./button";
@@ -15,6 +15,7 @@ const Navbar = ({ isLoggin }) => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+  const navigate = useNavigate();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-30 h-[90px] w-full flex items-center bg-[#0A0A0AB2] border-b border-[#FFFFFF14] border-solid nav-shadow">
@@ -41,18 +42,18 @@ const Navbar = ({ isLoggin }) => {
               >
                 <ul className="flex flex-col items-center text-[14px] gap-[20px] font-semibold py-4">
                   <li>Mine</li>
-                  <li>Task</li>
-                  <li>Referrals</li>
+                  <li onClick={() => navigate("/task")}>Task</li>
+                  <li onClick={() => navigate("/referals")}>Referrals</li>
                   <li>Wallet</li>
                   <li>Listing</li>
                 </ul>
               </div>
 
               {/* Desktop menu */}
-              <ul className="hidden md:flex items-center text-[14px] gap-[40px] font-semibold">
+              <ul className="hidden md:flex items-center text-[14px] gap-[40px] font-semibold cursor-pointer">
                 <li>Mine</li>
-                <li>Task</li>
-                <li>Referrals</li>
+                <li onClick={() => navigate("/task")}>Task</li>
+                <li onClick={() => navigate("/referals")}>Referrals</li>
                 <li>Wallet</li>
                 <li>Listing</li>
               </ul>
