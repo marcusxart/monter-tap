@@ -41,21 +41,19 @@ const Navbar = ({ isLoggin }) => {
                 } transition-[max-height,opacity] duration-500 ease-in-out overflow-hidden md:hidden w-full bg-[#0A0A0AB5] absolute top-full left-0 right-0 z-20`}
               >
                 <ul className="flex flex-col items-center text-[14px] gap-[20px] font-semibold py-4">
-                  <li>Mine</li>
+                  <li onClick={() => navigate("/dashboard")}>Mine</li>
                   <li onClick={() => navigate("/task")}>Task</li>
                   <li onClick={() => navigate("/referals")}>Referrals</li>
-                  <li>Wallet</li>
-                  <li>Listing</li>
+                  <li>Timer</li>
                 </ul>
               </div>
 
               {/* Desktop menu */}
               <ul className="hidden md:flex items-center text-[14px] gap-[40px] font-semibold cursor-pointer">
-                <li>Mine</li>
+                <li onClick={() => navigate("/dashboard")}>Mine</li>
                 <li onClick={() => navigate("/task")}>Task</li>
                 <li onClick={() => navigate("/referals")}>Referrals</li>
-                <li>Wallet</li>
-                <li>Listing</li>
+                <li>Timer</li>
               </ul>
 
               {/* User info */}
