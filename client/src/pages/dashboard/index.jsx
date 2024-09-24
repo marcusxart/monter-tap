@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MaxContainer from "../../components/maxContainer";
 import Banner from "../../components/banner";
 import Button from "../../components/button";
-import { coin, diamond } from "../../assets/images";
+import { coin, diamond, ticket } from "../../assets/images";
 import CoinButton from "../../components/coinButton";
 import Range from "./components/range";
 import AxeIcon from "../../assets/svgs/axe";
@@ -81,11 +81,11 @@ const Dashboard = () => {
           </h1>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-md:static max-md:transform-none">
             <p className="text-[#999999] max-md:text-center">
-              Your Total diamond
+              Your Total Ticket
             </p>
             <p className="text-[32px] font-semibold text-center max-md:text-[28px]">
               <div className="w-[100%] h-[20%] flex justify-center gap-2 items-center">
-                <img src={diamond} alt="" />
+                <img src={ticket} alt="" className=" size-9" />
                 {/* <p>{userInfo.account.bonus}</p> */}
                 {bonus}
               </div>

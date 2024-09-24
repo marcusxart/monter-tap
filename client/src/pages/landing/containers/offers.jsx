@@ -23,13 +23,13 @@ const OfferSection = () => {
                   className="w-full  h-full object-contain"
                 />
               </div>
-              <div className="w-full flex-shrink-0 text-right pl-[32px] relative z-[2] max-md:text-center max-w-[500px] max-md:text-center max-md:pl-[0px]">
+              <div className="w-full flex-shrink-0 text-right pl-[32px] relative z-[2] max-md:text-center max-w-[500px] max-md:pl-[0px]">
                 <h3 className="text-[34px] font-bold text-[#E4E1F8] text-center">
-                  Easy and fast payout
+                  Easy and fast redemption
                 </h3>
                 <p className="text-[#969799] text-[20px]">
-                  No complicated redemption processes or high minimums. Our easy
-                  payout system lets you enjoy your rewards with minimal hassle.
+                  Quickly redeem your coins for special platform perks and
+                  exclusive access to in-app features
                 </p>
               </div>
             </div>
@@ -55,8 +55,9 @@ const OfferSection = () => {
                   Mobile friendly
                 </h3>
                 <p className="text-[#969799] text-[20px]">
-                  No complicated redemption processes or high minimums. Our easy
-                  payout system lets you enjoy your rewards with minimal hassle.
+                  Seamless access across devices. Earn and enjoy platform
+                  rewards from anywhere, with a user-friendly redemption
+                  process.
                 </p>
               </div>
             </div>
@@ -82,8 +83,8 @@ const OfferSection = () => {
                   Effortless earning
                 </h3>
                 <p className="text-[#969799] text-[20px]">
-                  No complicated redemption processes or high minimums. Our easy
-                  payout system lets you enjoy your rewards with minimal hassle.
+                  Effortlessly collect coins to unlock exciting platform
+                  benefits and perks
                 </p>
               </div>
             </div>
