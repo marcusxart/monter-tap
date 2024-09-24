@@ -15,7 +15,7 @@ const HeroSection = () => {
           enjoy benefits within our platform—quick, simple, and fun
         </p>
         <div className="max-w-[250px] max-md:w-[80%]">
-          <Button text="Start earning" type="secondary" border full />
+          <Button text="Start Tapping" type="secondary" border full />
         </div>
       </div>
       <div className=" flex-shrink-0 flex-grow-1 max-md:hidden">
