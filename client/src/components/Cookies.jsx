@@ -2,16 +2,15 @@ import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 
 const CookieComponent = () => {
-  // State to track if the cookies banner should be visible
   const [cookiesAccepted, setCookiesAccepted] = useState(false);
 
-  // Check if the user has already accepted or declined cookies
-  useEffect(() => {
-    // const cookiesConsent = localStorage.getItem("cookies");
-    // if (cookiesConsent) {
-    //   setCookiesAccepted(true);
-    // }
-  }, []);
+  // // Check if the user has already accepted or declined cookies
+  // useEffect(() => {
+  //   // const cookiesConsent = localStorage.getItem("cookies");
+  //   // if (cookiesConsent) {
+  //   //   setCookiesAccepted(true);
+  //   // }
+  // }, []);
 
   const handleAcceptCookies = () => {
     localStorage.setItem("cookies", true);

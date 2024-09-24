@@ -4,7 +4,7 @@ import HeroSection from "./containers/hero";
 import OfferSection from "./containers/offers";
 import MaxContainer from "../../components/maxContainer";
 import CoinSection from "./containers/coin";
-import CookieComponent from "../../components/Cookies";
+// import CookieComponent from "../../components/Cookies";
 
 const Landing = () => {
   return (
@@ -16,7 +16,7 @@ const Landing = () => {
       <MaxContainer>
         <CoinSection />
       </MaxContainer>
-      <CookieComponent />
+      {/* <CookieComponent /> */}
     </div>
   );
 };
