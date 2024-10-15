@@ -16,6 +16,8 @@ import VerifyOtp from "./pages/auth/verifyOtp";
 import ResetPassword from "./pages/auth/ResetPassord";
 import ResendOtp from "./pages/auth/ResendOtp";
 import Referals from "./pages/referals/referals";
+import AboutUs from "./pages/aboutus";
+import Faq from "./pages/faq";
 
 const routes = createBrowserRouter([
   {
@@ -47,6 +49,8 @@ const routes = createBrowserRouter([
         children: [
           { path: "dashboard", element: <Dashboard /> },
           { path: "privacy", element: <Privacy /> },
+          { path: "aboutus", element: <AboutUs /> },
+          { path: "faq", element: <Faq /> },
         ],
       },
       {
