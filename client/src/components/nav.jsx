@@ -30,7 +30,7 @@ const Navbar = ({ isLoggin }) => {
       <li onClick={() => handleNavigate("/aboutus")}>About us</li>
       <li onClick={() => handleNavigate("/faq")}>FAQ</li>
       <li onClick={() => handleNavigate("/blog")}>Blog</li>
-      <li>Timer</li>
+      <li onClick={() => handleNavigate("/waitlist")}>Timer</li>
     </>
   );
 
@@ -88,10 +88,10 @@ const Navbar = ({ isLoggin }) => {
           {isLoggin ? (
             <div className="hidden md:flex items-center gap-[20px]">
               <p className="text-[18px] font-semibold">
-                {user.email || "User"}
+                {user.email || <Link to={"/auth/sign-in"}>Login</Link>}
               </p>
               <span className="grid place-items-center bg-[#E8C726] w-[52px] h-[52px] rounded-full text-[32px] font-bold text-black">
-                {user.email ? user.email.slice(0, 1).toUpperCase() : "U"}
+                {user.email ? user.email.slice(0, 1).toUpperCase() : ""}
               </span>
             </div>
           ) : (
