@@ -18,6 +18,7 @@ import ResendOtp from "./pages/auth/ResendOtp";
 import Referals from "./pages/referals/referals";
 import AboutUs from "./pages/aboutus";
 import Faq from "./pages/faq";
+import Blog from "./pages/blog";
 
 const routes = createBrowserRouter([
   {
@@ -51,6 +52,7 @@ const routes = createBrowserRouter([
           { path: "privacy", element: <Privacy /> },
           { path: "aboutus", element: <AboutUs /> },
           { path: "faq", element: <Faq /> },
+          { path: "blog", element: <Blog /> },
         ],
       },
       {

@@ -29,6 +29,7 @@ const Navbar = ({ isLoggin }) => {
       <li onClick={() => handleNavigate("/referals")}>Referrals</li>
       <li onClick={() => handleNavigate("/aboutus")}>About us</li>
       <li onClick={() => handleNavigate("/faq")}>FAQ</li>
+      <li onClick={() => handleNavigate("/blog")}>Blog</li>
       <li>Timer</li>
     </>
   );
