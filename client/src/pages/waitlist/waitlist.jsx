@@ -60,10 +60,11 @@ function Waitlist() {
               }}
               className="font-normal text-[40px]"
             >
-              Launching Soon
+              Big Surprise <span className=" text-neutral-50">🎉</span>
             </p>
+
             <div className="text-[24px] text-center font-bold">
-              <div className="flex gap-[10px] text-[40px]">
+              <div className="flex gap-[10px] text-[40px] ">
                 {/* Days */}
                 <div
                   style={{
