@@ -58,6 +58,10 @@ const Navbar = ({ isLoggin }) => {
             <ul className="flex flex-col items-center text-[14px] gap-[20px] font-semibold py-4">
               {menuItems}
             </ul>
+            <div className="w-full h-[30px] flex justify-center items-center">
+              <Link to={"/auth/sign-in"}>Login</Link>
+            </div>
+
             {!isLoggin && (
               <div className="flex flex-col items-center gap-[16px]">
                 <Button
