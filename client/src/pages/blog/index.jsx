@@ -20,7 +20,7 @@ const Blog = () => {
               color: "transparent",
             }}
           >
-            Big Surprise Coming Soon
+            Blog Coming Soon
           </h2>
         </div>
       </MaxContainer>
